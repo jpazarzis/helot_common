@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+.vagrant/
+
+*.swp
+
 # Distribution / packaging
 .Python
 env/
