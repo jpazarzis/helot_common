@@ -8,6 +8,7 @@ setup(
     url="https://github.com/jpazarzis/helot_configuration",
     author="John Pazarzis",
     install_requires=[
+        "pyyaml",
     ],
     packages=find_packages(),
     version='0.0.1',
