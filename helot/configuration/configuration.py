@@ -58,12 +58,11 @@ class DataHolderObject(object):
 
 
 class Configuration(DataHolderObject):
-    """Exposes configuration settings.
+    """Holds Configuration settings.
+
     A setting can be accessed using "dot" resolution, meaning like a class level
     attribute following the structure of the yaml configuration file that was
     used to call the initialize method.
-    This class is never supposed to be instantiated; instead it must be used as
-    a "static" C++ class meaning proving access only to its class level members.
     """
 
     def __str__(self):
@@ -77,6 +76,7 @@ class Configuration(DataHolderObject):
 
     def initialize(self, data_holder=None, **kwargs):
         """Sets the execution mode.
+
         :parameter data_holder: Can be one of the following:
             (str) The yaml or json configuration filename.
             (dict) A dict containing key - value pairs.
@@ -105,6 +105,7 @@ class Configuration(DataHolderObject):
 
 def _make_holder_object(item):
     """Used to convert a dictionary to a python object.
+
     :param item: Can either be a dictionary, a list / tuple or a scalar.
     :return: The corresponding python object.
     """
