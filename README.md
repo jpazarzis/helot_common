@@ -62,28 +62,19 @@ Save the following file as john_doe.json
 }
 ```
 
+Save the following python script as test1.py:
 ```python
 from helot.configuration import configuration
 configuration.initialize('john_doe.json')
-configuration.name
+print(configuration.name)
+print(configuration.job)
+print(configuration.skills.languages)
 ```
 
+Running test1.py produces the following output:
 ```
-'John Doe'
-```
-
-```python
-configuration.job
-```
-
-```
-'Developer'
-```
-
-```python
-configuration.skills.languages
-```
-
-```
+ubuntu@ubuntu-xenial:~$ python3 test1.py 
+John Doe
+Developer
 ['C++', 'Python', 'Java']
 ```
