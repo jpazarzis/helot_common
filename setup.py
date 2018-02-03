@@ -17,5 +17,5 @@ setup(
     author="John Pazarzis",
     install_requires=[],
     packages=["helot.configuration"],
-    version='0.0.312',
+    version='0.0.313',
 )
