@@ -78,3 +78,33 @@ John Doe
 Developer
 ['C++', 'Python', 'Java']
 ```
+
+
+#### Initialize from yaml file
+
+Save the following file as john_doe.yaml
+```
+name: Martin D'vloper
+job: Developer
+skills:
+    languages:
+        - C++
+        - C#
+        - Python
+```
+
+Save the following python script as test2.py:
+```python
+from helot.configuration import configuration
+configuration.initialize('john_doe.yaml')
+print(configuration.name)
+print(configuration.job)
+print(configuration.skills.languages)
+```
+
+Running test2.py produces the following output:
+```
+ubuntu@ubuntu-xenial:~$ python3 test2.py 
+John Doe
+Developer
+['C++', 'Python', 'Java']
