@@ -12,12 +12,12 @@ to easily build on top of it, in case that he wants to specialize its behaviour.
 #### Using pip
 ```
 pip3 install helot_configuration
-sudo python3 setup.py install
 ```
 
 #### Source code
 ```
 git clone https://github.com/jpazarzis/helot_configuration
+sudo python3 setup.py install
 ```
 
 ## Importing
