@@ -20,4 +20,27 @@ sudo python3 setup.py install
 git clone https://github.com/jpazarzis/helot_configuration
 ```
 
+#### Usage
 
+To import the package you can use either style:
+
+```python
+from helot import configuration
+```
+
+```python
+import helot.configuration
+```
+
+The following syntax:
+```python
+import helot
+helot.configuration
+```
+
+will not work and will produce the following exception:
+```
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'helot' has no attribute 'configuration'
+```
