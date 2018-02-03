@@ -1,0 +1,30 @@
+{
+  "name": "Martin D'vloper",
+  "job": "Developer",
+  "skill": "Elite",
+  "employed": true,
+  "age": 24,
+  "foods": [
+    "Apple",
+    "Mango",
+    1234
+  ],
+  "languages": {
+    "perl": "Elite",
+    "python": "Elite",
+    "pascal": "Lame",
+    "object_oriented": {
+      "best": [
+        "C++",
+        "C#"
+      ],
+      "great": "Java"
+    }
+  },
+  "mysql": {
+    "host": "localhost",
+    "user": "root",
+    "passwd": "vagrant",
+    "db": "test"
+  }
+}
