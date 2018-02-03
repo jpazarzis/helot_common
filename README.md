@@ -20,7 +20,7 @@ sudo python3 setup.py install
 git clone https://github.com/jpazarzis/helot_configuration
 ```
 
-#### Usage
+## Importing
 
 To import the package you can use either style:
 
