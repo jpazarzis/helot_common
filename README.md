@@ -25,11 +25,13 @@ git clone https://github.com/jpazarzis/helot_configuration
 To import the package you can use either style:
 
 ```python
-from helot import configuration
+from helot.configuration import configuration
 ```
 
+or
+
 ```python
-import helot.configuration
+import helot.configuration.configuration as configuration
 ```
 
 The following syntax:
@@ -43,4 +45,45 @@ will not work and will produce the following exception:
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 AttributeError: module 'helot' has no attribute 'configuration'
+```
+
+## Examples
+#### Initialize from json file
+
+Save the following file as john_doe.json
+```
+{
+  "name": "John Doe",
+  "job": "Developer",
+  "skills": {
+        "languages": ["C++", "Python", "Java"],
+        "operating_systems": ["Linux", "Windows]
+  }
+}
+```
+
+```python
+from helot.configuration import configuration
+configuration.initialize('john_doe.json')
+configuration.name
+```
+
+```
+'John Doe'
+```
+
+```python
+configuration.job
+```
+
+```
+'Developer'
+```
+
+```python
+configuration.skills.languages
+```
+
+```
+['C++', 'Python', 'Java']
 ```
