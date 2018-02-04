@@ -15,7 +15,9 @@ setup(
     long_description="Exposes a configuration object.",
     url="https://github.com/jpazarzis/helot_configuration",
     author="John Pazarzis",
-    install_requires=[],
+    install_requires=[
+         "pyyaml",
+    ],
     packages=["helot.configuration"],
     version='0.0.313',
 )
