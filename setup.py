@@ -10,10 +10,10 @@ from setuptools import setup
 
 
 setup(
-    name="helot_configuration",
-    description="Exposes a common object.",
-    long_description="Exposes a common object.",
-    url="https://github.com/jpazarzis/helot_configuration",
+    name="helot_common",
+    description="Exposes commonly reused functionality.",
+    long_description="Exposes commonly reused functionality",
+    url="https://github.com/jpazarzis/helot_common",
     author="John Pazarzis",
     install_requires=[
          "pyyaml",
