@@ -3,9 +3,9 @@
 import os
 import unittest
 
-from helot.configuration import ConfigurationError
-from helot.configuration import DataHolderObject
-from helot.configuration import configuration
+from helot.common import ConfigurationError
+from helot.common import DataHolderObject
+from helot.common import configuration
 
 _CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 _RESOURCES_DIR = os.path.join(_CURRENT_DIR, 'resources')

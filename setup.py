@@ -11,11 +11,13 @@ from setuptools import setup
 
 setup(
     name="helot_configuration",
-    description="Exposes a configuration object.",
-    long_description="Exposes a configuration object.",
+    description="Exposes a common object.",
+    long_description="Exposes a common object.",
     url="https://github.com/jpazarzis/helot_configuration",
     author="John Pazarzis",
-    install_requires=[],
-    packages=["helot.configuration"],
+    install_requires=[
+         "pyyaml",
+    ],
+    packages=["helot.common"],
     version='0.0.313',
 )

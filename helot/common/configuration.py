@@ -38,7 +38,7 @@ class DataHolderObject(object):
         return '\n'.join(key_value_pairs)
 
     def _active_attributes(self):
-        """Yields all the configuration attributes."""
+        """Yields all the common attributes."""
         for attr_name in dir(self):
             if attr_name.startswith('__') and attr_name.endswith('__'):
                 continue
@@ -61,7 +61,7 @@ class Configuration(DataHolderObject):
     """Holds Configuration settings.
 
     A setting can be accessed using "dot" resolution, meaning like a class level
-    attribute following the structure of the yaml configuration file that was
+    attribute following the structure of the yaml common file that was
     used to call the initialize method.
     """
 
@@ -70,7 +70,7 @@ class Configuration(DataHolderObject):
         return self.__class__.__name__ + '\n' + self._get_as_formated_string(1)
 
     def reset(self):
-        """Removes all configuration settings."""
+        """Removes all common settings."""
         for attr_name in self._active_attributes():
             delattr(self, attr_name)
 
@@ -78,9 +78,9 @@ class Configuration(DataHolderObject):
         """Sets the execution mode.
 
         :parameter data_holder: Can be one of the following:
-            (str) The yaml or json configuration filename.
+            (str) The yaml or json common filename.
             (dict) A dict containing key - value pairs.
-        :parameter **kwargs: key-value pairs to add in the configuration.
+        :parameter **kwargs: key-value pairs to add in the common.
         :raises ConfigurationError: Parsing error.
         """
         try:
@@ -120,5 +120,5 @@ def _make_holder_object(item):
         return item
 
 
-# The configuration object to expose.
+# The common object to expose.
 configuration = Configuration()
