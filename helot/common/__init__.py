@@ -1,9 +1,7 @@
-from .configuration import configuration
-from .configuration import ConfigurationError
-from .configuration import DataHolderObject
+from ._configuration import configuration
+from ._configuration import ConfigurationError
 
 __all__ = [
     'configuration',
     'ConfigurationError',
-    'DataHolderObject'
 ]

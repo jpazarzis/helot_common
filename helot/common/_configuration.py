@@ -10,7 +10,7 @@ class ConfigurationError(Exception):
     """Configuration Error."""
 
 
-class DataHolderObject(object):
+class _DataHolderObject(object):
     """Used for the conversion of a dict to a python object."""
 
     def _get_as_formated_string(self, number_of_tabs=0):
@@ -19,7 +19,7 @@ class DataHolderObject(object):
         prefix = '\t' * number_of_tabs
         for attr_name in self._active_attributes():
             value = getattr(self, attr_name)
-            if isinstance(value, DataHolderObject):
+            if isinstance(value, _DataHolderObject):
                 key_value_desc = ''.join(
                     [
                         prefix,
@@ -52,12 +52,12 @@ class DataHolderObject(object):
             return
 
         if item not in self.__dict__:
-            setattr(self, item, DataHolderObject())
+            setattr(self, item, _DataHolderObject())
 
         return self.__dict__.get(item)
 
 
-class Configuration(DataHolderObject):
+class _Configuration(_DataHolderObject):
     """Holds Configuration settings.
 
     A setting can be accessed using "dot" resolution, meaning like a class level
@@ -110,7 +110,7 @@ def _make_holder_object(item):
     :return: The corresponding python object.
     """
     if isinstance(item, dict):
-        obj = DataHolderObject()
+        obj = _DataHolderObject()
         for key, value in item.items():
             setattr(obj, key, _make_holder_object(value))
         return obj
@@ -121,4 +121,4 @@ def _make_holder_object(item):
 
 
 # The common object to expose.
-configuration = Configuration()
+configuration = _Configuration()

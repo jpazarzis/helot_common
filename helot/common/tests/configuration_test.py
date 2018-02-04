@@ -4,8 +4,8 @@ import os
 import unittest
 
 from helot.common import ConfigurationError
-from helot.common import DataHolderObject
 from helot.common import configuration
+from helot.common._configuration import _DataHolderObject
 
 _CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 _RESOURCES_DIR = os.path.join(_CURRENT_DIR, 'resources')
@@ -38,12 +38,12 @@ class TestConfiguration(unittest.TestCase):
 
     def test_non_existing_attribute(self):
         x = configuration.junk
-        self.assertTrue(isinstance(x, DataHolderObject))
+        self.assertTrue(isinstance(x, _DataHolderObject))
         configuration.junk = 'junk'
         self.assertTrue(isinstance(configuration.junk, str))
         self.assertEqual(configuration.junk, 'junk')
         configuration.junk1.junk = 'junk'
-        self.assertTrue(isinstance(configuration.junk1, DataHolderObject))
+        self.assertTrue(isinstance(configuration.junk1, _DataHolderObject))
         self.assertEqual(configuration.junk1.junk, 'junk')
         self.assertTrue(isinstance(configuration.junk1.junk, str))
         configuration.j1.j2.j3.j4.j5 = 'junk'
@@ -54,7 +54,7 @@ class TestConfiguration(unittest.TestCase):
         self.assertEqual(configuration.junk, 'this is junk')
 
     def test_data_holder_object(self):
-        x = DataHolderObject()
+        x = _DataHolderObject()
         x.t1.t2.t3 = [1, 2]
         self.assertListEqual(x.t1.t2.t3, [1, 2])
 
