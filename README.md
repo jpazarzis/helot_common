@@ -108,3 +108,31 @@ ubuntu@ubuntu-xenial:~$ python3 test2.py
 John Doe
 Developer
 ['C++', 'Python', 'Java']
+```
+#### Common use cases
+
+```
+>>> from helot.common import configuration as c
+>>> c.initialize({'a': 1})
+>>> c.a
+1
+>>> print(c)
+_Configuration
+a: 1
+>>> c.reset()
+>>> print(c)
+_Configuration
+>>> c.initialize(a='test')
+>>> print(c)
+_Configuration
+        a: test
+>>> with open('test.json', 'w') as f:
+...     f.write('{"a": "test" }')
+...
+14
+>>> c.initialize('test.json', name='unknown')
+>>> c.name
+'unknown'
+>>> c.a
+'test'
+```
