@@ -9,12 +9,12 @@ to easily build on top of it, in case that he wants to specialize its behaviour.
 
 #### Using pip
 ```
-pip3 install helot_configuration
+pip3 install helot_common
 ```
 
 #### Source code
 ```
-git clone https://github.com/jpazarzis/helot_configuration
+git clone https://github.com/jpazarzis/helot_common
 sudo python3 setup.py install
 ```
 
