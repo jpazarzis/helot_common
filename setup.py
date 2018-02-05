@@ -19,5 +19,5 @@ setup(
         "pyyaml",
     ],
     packages=["helot.common"],
-    version='0.0.32',
+    version='0.0.33',
 )

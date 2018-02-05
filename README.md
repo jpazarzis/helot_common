@@ -1,14 +1,12 @@
-## helot_configuration
-## Adds a configuration object to helot namespace.
-
-Exports a configuration object that can be used to hold application settings
-loadable from json, yaml and direct assignment using python attribute access
-syntax.
+# helot_common
+Adds the common library to helot library.
   
 This library is favouring simplicity over comprehension while it allows the user
+
 to easily build on top of it, in case that he wants to specialize its behaviour.
 
 ## Installation
+
 #### Using pip
 ```
 pip3 install helot_configuration
@@ -20,18 +18,25 @@ git clone https://github.com/jpazarzis/helot_configuration
 sudo python3 setup.py install
 ```
 
+The exposed components from common are the following: 
+
+### configuration
+Exports a configuration object that can be used to hold application settings
+loadable from json, yaml and direct assignment using python attribute access
+syntax.
+
 ## Importing
 
 To import the package you can use either style:
 
 ```python
-from helot.configuration import configuration
+from helot.common import configuration
 ```
 
 or
 
 ```python
-import helot.configuration.configuration as configuration
+import helot.common.configuration as configuration
 ```
 
 The following syntax:
