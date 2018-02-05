@@ -75,32 +75,61 @@ class _Configuration(_DataHolderObject):
             delattr(self, attr_name)
 
     def initialize(self, data_holder=None, **kwargs):
-        """Sets the execution mode.
+        """Specifies the configuration attributes.
 
-        :parameter data_holder: Can be one of the following:
-            (str) The yaml or json common filename.
-            (dict) A dict containing key - value pairs.
-        :parameter **kwargs: key-value pairs to add in the common.
-        :raises ConfigurationError: Parsing error.
+        Arguments
+            data_holder: Can be one of the following:
+                            (str) The yaml or json common filename.
+                            (dict) A dict containing key - value pairs.
+
+            **kwargs: key-value pairs to add in the common.
+
+        Exceptions
+            ConfigurationError: In case of any parsing error.
+
+        Examples
+                >>> from helot.common import configuration as c
+                >>> c.initialize({'a': 1})
+                >>> c.a
+                1
+                >>> print(c)
+                _Configuration
+                a: 1
+                >>> c.reset()
+                >>> print(c)
+                _Configuration
+                >>> c.initialize(a='test')
+                >>> print(c)
+                _Configuration
+                        a: test
+                >>> with open('test.json', 'w') as f:
+                ...     f.write('{"a": "test" }')
+                ...
+                14
+                >>> c.initialize('test.json', name='unknown')
+                >>> c.name
+                'unknown'
+                >>> c.a
+                'test'
         """
         try:
             self.reset()
             if not data_holder:
                 data_holder = {}
-            data_as_dict = None
             if isinstance(data_holder, dict):
                 data_as_dict = data_holder
-            elif isinstance(data_holder, str) and os.path.isfile(data_holder):
-                if data_holder.endswith('json'):
-                    data_as_dict = json.load(open(data_holder))
-                elif data_holder.endswith('yaml'):
-                    data_as_dict = yaml.load(open(data_holder))
+            elif str(data_holder).endswith('json'):
+                data_as_dict = json.load(open(data_holder))
+            elif str(data_holder).endswith('yaml'):
+                data_as_dict = yaml.load(open(data_holder))
+            else:
+                raise ConfigurationError("Failed to load: %s" % data_holder)
+        except Exception as ex:
+            raise ConfigurationError(ex)
+        else:
             data_as_dict.update(kwargs)
             for key, value in data_as_dict.items():
                 setattr(self, key, _make_holder_object(value))
-        except Exception as ex:
-            logging.exception(ex)
-            raise ConfigurationError(ex)
 
 
 def _make_holder_object(item):
