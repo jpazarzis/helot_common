@@ -20,7 +20,7 @@ sudo python3 setup.py install
 
 The exposed components from common are the following: 
 
-## configuration
+## Using the configuration library
 Exports a configuration object that can be used to hold application settings
 loadable from json, yaml and direct assignment using python attribute access
 syntax.
