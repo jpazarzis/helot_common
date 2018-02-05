@@ -42,14 +42,14 @@ import helot.common.configuration as configuration
 The following syntax:
 ```python
 import helot
-helot.configuration
+helot.common
 ```
 
 will not work and will produce the following exception:
 ```
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
-AttributeError: module 'helot' has no attribute 'configuration'
+AttributeError: module 'helot' has no attribute 'common'
 ```
 
 ## Examples
