@@ -20,12 +20,12 @@ sudo python3 setup.py install
 
 The exposed components from common are the following: 
 
-### configuration
+## configuration
 Exports a configuration object that can be used to hold application settings
 loadable from json, yaml and direct assignment using python attribute access
 syntax.
 
-## Importing
+#### Importing
 
 To import the package you can use either style:
 
@@ -52,7 +52,7 @@ Traceback (most recent call last):
 AttributeError: module 'helot' has no attribute 'common'
 ```
 
-## Examples
+#### Examples
 #### Initialize from json file
 
 Save the following file as john_doe.json
