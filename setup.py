@@ -10,7 +10,7 @@ https://packaging.python.org/guides/packaging-namespace-packages/#native-namespa
 from setuptools import setup
 
 setup(
-    name="helot_common",
+    name="helotcommon",
     description="Exposes commonly reused functionality.",
     long_description="Exposes commonly reused functionality",
     url="https://github.com/jpazarzis/helot_common",
@@ -19,5 +19,5 @@ setup(
         "pyyaml",
     ],
     packages=["helot.common"],
-    version='0.0.34',
+    version='0.0.35',
 )
